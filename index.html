@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cafe Finder</h1>
+        <p>Discover the perfect coffee spot near you</p>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="location-input" placeholder="Enter your location...">
+                <button id="search-btn">Find Cafes</button>
+            </div>
+        </section>
+
+        <section class="filters-section">
+            <h3>Filters</h3>
+            <div class="filter-container">
+                <label>
+                    <input type="checkbox" id="wifi-filter" value="wifi">
+                    WiFi Available
+                </label>
+                <label>
+                    <input type="checkbox" id="outdoor-filter" value="outdoor">
+                    Outdoor Seating
+                </label>
+                <label>
+                    <input type="checkbox" id="parking-filter" value="parking">
+                    Parking Available
+                </label>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <h3>Nearby Cafes</h3>
+            <div id="cafe-results" class="cafe-grid">
+                <!-- Cafe results will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cafe Finder. Find your perfect coffee spot.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
