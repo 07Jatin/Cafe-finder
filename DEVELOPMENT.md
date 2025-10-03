@@ -1,10 +1,10 @@
-# WARP.md
+# Cafe Finder Development Guide
 
-This file provides guidance to WARP (warp.dev) when working with code in this repository.
+This file provides development guidance and architectural overview for the Cafe Finder project.
 
 ## Project Overview
 
-Cafe Finder is a simple, responsive web application built with vanilla HTML, CSS, and JavaScript that helps users discover coffee shops in their area. The app uses sample data and demonstrates modern web development patterns without external dependencies or build tools.
+Cafe Finder is a modern, responsive web application built with vanilla HTML, CSS, and JavaScript that helps users discover coffee shops in major Indian cities. The app features location-based search, smart filtering, animated UI elements, and demonstrates clean web development patterns without external dependencies or build tools.
 
 ## Development Commands
 
@@ -110,6 +110,8 @@ The application uses simple global state management:
 - `.feature-badge` - Semantic badges for cafe amenities
 - `.search-container` - Flexible search input and button layout
 - `.filter-container` - Checkbox filter layout
+- `.coffee-cup` - Animated CSS-only logo with steaming effects
+- `.logo` - Flexbox container for logo and title arrangement
 
 ## Development Guidelines
 

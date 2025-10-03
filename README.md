@@ -90,7 +90,7 @@ cafe-finder/
 ├── index.html          # Main HTML structure with semantic markup
 ├── styles.css          # CSS with animations, grid layouts & responsiveness
 ├── script.js           # JavaScript with location-based search logic
-├── WARP.md            # Development guidance for WARP AI
+├── DEVELOPMENT.md     # Development guide and architectural overview
 ├── README.md          # Project documentation
 └── .gitignore         # Git ignore file
 ```
