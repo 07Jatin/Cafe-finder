@@ -1,204 +1,41 @@
-// Cafe Finder JavaScript
+// Cafe Finder JavaScript - Static Data Version (no API)
 
-// Sample cafe data organized by Indian cities
+// Local sample data organized by Indian cities
 const locationBasedCafes = {
-    // Default cafes for generic searches
     default: [
-        {
-            id: 1,
-            name: "Chai Point",
-            address: "MG Road, Central Delhi",
-            rating: 4.5,
-            features: ["wifi", "outdoor", "parking"],
-            description: "Modern Indian tea house serving authentic chai and coffee blends.",
-            distance: "0.2 km"
-        },
-        {
-            id: 2,
-            name: "Bean There Coffee",
-            address: "Khan Market, New Delhi",
-            rating: 4.2,
-            features: ["wifi", "parking"],
-            description: "Cozy cafe with freshly roasted coffee and continental breakfast options.",
-            distance: "0.5 km"
-        }
+        { id: 1, name: "Chai Point", address: "MG Road, Central Delhi", rating: 4.5, features: ["wifi", "outdoor", "parking"], description: "Modern Indian tea house serving authentic chai and coffee blends.", distance: "0.2 km" },
+        { id: 2, name: "Bean There Coffee", address: "Khan Market, New Delhi", rating: 4.2, features: ["wifi", "parking"], description: "Cozy cafe with freshly roasted coffee and continental breakfast options.", distance: "0.5 km" },
+        { id: 3, name: "Filter Coffee Corner", address: "CP Metro Station, New Delhi", rating: 4.7, features: ["outdoor", "parking"], description: "Authentic South Indian filter coffee with traditional breakfast items.", distance: "0.8 km" },
+        { id: 4, name: "Cyber City Chai", address: "Gurgaon IT Hub, Haryana", rating: 4.0, features: ["wifi"], description: "Tech district chai spot with quick bites and strong blends.", distance: "1.2 km" }
     ],
-    // Mumbai area cafes
-    'mumbai': [
-        {
-            id: 5,
-            name: "Cafe Mocha",
-            address: "Bandra West, Mumbai, Maharashtra",
-            rating: 4.6,
-            features: ["wifi", "outdoor"],
-            description: "Trendy Bandra cafe known for its filter coffee and vada pav fusion dishes.",
-            distance: "0.3 km"
-        },
-        {
-            id: 6,
-            name: "Leopold Cafe",
-            address: "Colaba Causeway, Mumbai, Maharashtra",
-            rating: 4.3,
-            features: ["wifi", "parking"],
-            description: "Historic Mumbai institution serving continental food and excellent coffee since 1871.",
-            distance: "0.7 km"
-        },
-        {
-            id: 7,
-            name: "Prithvi Cafe",
-            address: "Juhu, Mumbai, Maharashtra",
-            rating: 4.8,
-            features: ["outdoor", "wifi", "parking"],
-            description: "Artistic cafe attached to Prithvi Theatre with live performances and great coffee.",
-            distance: "1.1 km"
-        }
+    mumbai: [
+        { id: 5, name: "Leopold Cafe", address: "Colaba Causeway, Mumbai", rating: 4.3, features: ["wifi", "outdoor"], description: "Iconic Mumbai cafe serving continental fare and coffee.", distance: "1.1 km" },
+        { id: 6, name: "Prithvi Cafe", address: "Juhu, Mumbai", rating: 4.5, features: ["outdoor"], description: "Charming outdoor cafe at Prithvi Theatre.", distance: "2.3 km" }
     ],
-    // Bangalore area cafes
-    'bangalore': [
-        {
-            id: 8,
-            name: "Third Wave Coffee",
-            address: "Koramangala, Bangalore, Karnataka",
-            rating: 4.4,
-            features: ["wifi", "outdoor"],
-            description: "Specialty coffee roasters popular among IT professionals with single-origin beans.",
-            distance: "0.4 km"
-        },
-        {
-            id: 9,
-            name: "Toit Brewpub",
-            address: "Indiranagar, Bangalore, Karnataka",
-            rating: 4.7,
-            features: ["outdoor", "parking"],
-            description: "Microbrewery and cafe serving craft beer, wood-fired pizzas, and artisan coffee.",
-            distance: "0.9 km"
-        },
-        {
-            id: 10,
-            name: "Blue Tokai Coffee",
-            address: "Church Street, Bangalore, Karnataka",
-            rating: 4.5,
-            features: ["wifi", "outdoor"],
-            description: "Indian coffee roaster focusing on estate-grown beans with minimalist decor.",
-            distance: "0.6 km"
-        }
+    bengaluru: [
+        { id: 7, name: "Third Wave Coffee", address: "Koramangala, Bengaluru", rating: 4.6, features: ["wifi", "outdoor"], description: "Specialty coffee roaster offering pour-overs and espresso.", distance: "0.9 km" },
+        { id: 8, name: "Blue Tokai", address: "Indiranagar, Bengaluru", rating: 4.4, features: ["wifi"], description: "Artisanal roastery and cafe with single-origin beans.", distance: "1.4 km" }
     ],
-    // Delhi area cafes
-    'delhi': [
-        {
-            id: 11,
-            name: "Cafe Turtle",
-            address: "Khan Market, New Delhi",
-            rating: 4.5,
-            features: ["wifi", "outdoor"],
-            description: "Bookstore cafe with literary ambiance, serving excellent coffee and continental cuisine.",
-            distance: "0.5 km"
-        },
-        {
-            id: 12,
-            name: "Hauz Khas Social",
-            address: "Hauz Khas Village, New Delhi",
-            rating: 4.2,
-            features: ["wifi", "parking"],
-            description: "Trendy co-working cafe space with rooftop seating and Instagram-worthy interiors.",
-            distance: "0.8 km"
-        },
-        {
-            id: 13,
-            name: "Roseate House Cafe",
-            address: "Aerocity, New Delhi",
-            rating: 4.6,
-            features: ["wifi", "outdoor", "parking"],
-            description: "Luxury hotel cafe with premium coffee blends and elegant fine dining experience.",
-            distance: "1.2 km"
-        }
+    delhi: [
+        { id: 9, name: "Cafe Turtle", address: "Khan Market, New Delhi", rating: 4.2, features: ["wifi"], description: "Bookstore cafe with quiet ambience and coffee.", distance: "0.7 km" },
+        { id: 10, name: "Hauz Khas Social", address: "Hauz Khas Village, Delhi", rating: 4.1, features: ["outdoor"], description: "Hip co-working space and cafe with views.", distance: "2.8 km" }
     ],
-    // Chennai area cafes
-    'chennai': [
-        {
-            id: 14,
-            name: "Cafe Coffee Day",
-            address: "Marina Beach, Chennai, Tamil Nadu",
-            rating: 4.1,
-            features: ["wifi", "outdoor"],
-            description: "Popular Indian coffee chain with beachside location and strong South Indian filter coffee.",
-            distance: "0.3 km"
-        },
-        {
-            id: 15,
-            name: "Amethyst Cafe",
-            address: "Whites Road, Chennai, Tamil Nadu",
-            rating: 4.7,
-            features: ["outdoor", "parking"],
-            description: "Garden cafe in a heritage bungalow serving organic coffee and healthy Mediterranean food.",
-            distance: "0.7 km"
-        }
+    chennai: [
+        { id: 11, name: "Amethyst Cafe", address: "Royapettah, Chennai", rating: 4.7, features: ["outdoor", "parking"], description: "Garden cafe offering coffee and continental fare.", distance: "1.6 km" }
     ],
-    // Kolkata area cafes
-    'kolkata': [
-        {
-            id: 16,
-            name: "Flurys",
-            address: "Park Street, Kolkata, West Bengal",
-            rating: 4.4,
-            features: ["wifi", "parking"],
-            description: "Iconic colonial-era confectionery and cafe famous for its cakes and English breakfast tea.",
-            distance: "0.4 km"
-        },
-        {
-            id: 17,
-            name: "Coffee House",
-            address: "College Street, Kolkata, West Bengal",
-            rating: 4.3,
-            features: ["wifi", "outdoor"],
-            description: "Historic adda spot for intellectuals and students, serving traditional South Indian coffee.",
-            distance: "0.6 km"
-        }
+    kolkata: [
+        { id: 12, name: "Flurys", address: "Park Street, Kolkata", rating: 4.3, features: ["wifi"], description: "Historic tearoom with pastries and coffee.", distance: "0.8 km" },
+        { id: 13, name: "Coffee House", address: "College Street, Kolkata", rating: 4.1, features: ["outdoor"], description: "Legendary adda spot serving South Indian coffee.", distance: "0.6 km" }
     ],
-    // Pune area cafes
-    'pune': [
-        {
-            id: 18,
-            name: "German Bakery",
-            address: "Koregaon Park, Pune, Maharashtra",
-            rating: 4.2,
-            features: ["wifi", "outdoor"],
-            description: "Famous bakery cafe serving European-style coffee, fresh breads, and continental breakfast.",
-            distance: "0.5 km"
-        },
-        {
-            id: 19,
-            name: "Dario's",
-            address: "FC Road, Pune, Maharashtra",
-            rating: 4.5,
-            features: ["outdoor", "parking"],
-            description: "Student-friendly cafe near Fergusson College with affordable coffee and Italian cuisine.",
-            distance: "0.8 km"
-        }
+    pune: [
+        { id: 14, name: "German Bakery", address: "Koregaon Park, Pune", rating: 4.2, features: ["wifi", "outdoor"], description: "European-style bakery cafe with fresh coffee.", distance: "0.5 km" },
+        { id: 15, name: "Dario's", address: "FC Road, Pune", rating: 4.5, features: ["outdoor", "parking"], description: "Italian eatery and cafe popular with students.", distance: "0.8 km" }
     ]
 };
 
-// Keep original sample cafes for backward compatibility
-const sampleCafes = locationBasedCafes.default.concat([
-    {
-        id: 3,
-        name: "Filter Coffee Corner",
-        address: "CP Metro Station, New Delhi",
-        rating: 4.7,
-        features: ["outdoor", "parking"],
-        description: "Authentic South Indian filter coffee with traditional breakfast items.",
-        distance: "0.8 km"
-    },
-    {
-        id: 4,
-        name: "Cyber City Chai",
-        address: "Gurgaon IT Hub, Haryana",
-        rating: 4.0,
-        features: ["wifi"],
-        description: "Perfect for remote work with high-speed WiFi and masala chai.",
-        distance: "1.2 km"
-    }
-]);
+// State management
+let currentCafes = [];
+let isLoading = false;
 
 // DOM elements
 const locationInput = document.getElementById('location-input');
@@ -207,10 +44,6 @@ const cafeResults = document.getElementById('cafe-results');
 const wifiFilter = document.getElementById('wifi-filter');
 const outdoorFilter = document.getElementById('outdoor-filter');
 const parkingFilter = document.getElementById('parking-filter');
-
-// State
-let currentCafes = [];
-let isLoading = false;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
@@ -227,14 +60,22 @@ document.addEventListener('DOMContentLoaded', function() {
     outdoorFilter.addEventListener('change', applyFilters);
     parkingFilter.addEventListener('change', applyFilters);
 
-    // Show initial results
-    displayCafes(sampleCafes);
-    currentCafes = sampleCafes;
+    // Load initial cafes from API
+    loadInitialCafes();
 });
 
-// Handle search functionality
+// Load initial cafes from local data
+function loadInitialCafes() {
+    setLoading(true);
+    currentCafes = locationBasedCafes.default.slice();
+    displayCafes(currentCafes);
+    setLoading(false);
+}
+
+// Handle search functionality (no API)
 function handleSearch() {
     const location = locationInput.value.trim().toLowerCase();
+    console.log(`Searching for cafes in: ${location}`);
     
     if (!location) {
         alert('Please enter a location to search for cafes.');
@@ -245,32 +86,19 @@ function handleSearch() {
 
     setLoading(true);
     
-    // Simulate API call delay
-    setTimeout(() => {
-        // Look for location matches in our sample data
-        let matchFound = false;
-        
-        // Check if we have cafes for this location
-        for (const [key, cafes] of Object.entries(locationBasedCafes)) {
-            if (location.includes(key) || key.includes(location)) {
-                currentCafes = cafes;
-                matchFound = true;
-                break;
-            }
-        }
-        
-        // If no match, use default cafes
-        if (!matchFound) {
-            currentCafes = sampleCafes;
-        }
-        
-        applyFilters();
-        setLoading(false);
-        
-        // Update the results section heading
-        document.querySelector('.results-section h3').textContent = 
-            `Cafes near "${location.charAt(0).toUpperCase() + location.slice(1)}"`;
-    }, 1500);
+    // Use local data for city or fall back to default
+    const cafes = locationBasedCafes[location] || locationBasedCafes.default;
+    currentCafes = cafes;
+    applyFilters();
+
+    const titleEl = document.querySelector('.results-section h3');
+    if (locationBasedCafes[location]) {
+        titleEl.textContent = `Cafes near "${location.charAt(0).toUpperCase() + location.slice(1)}"`;
+    } else {
+        titleEl.textContent = `Cafes near "${location.charAt(0).toUpperCase() + location.slice(1)}" - City not found, showing default`;
+    }
+
+    setLoading(false);
 }
 
 // Apply filters to current cafes
@@ -360,6 +188,16 @@ function generateStarRating(rating) {
     return `<span style="color: #FFD700; font-size: 1.2rem;">${starsHtml}</span>`;
 }
 
+// Show error message
+function showError(message) {
+    cafeResults.innerHTML = `
+        <div style="text-align: center; padding: 2rem; color: #e74c3c;">
+            <p><strong>Error:</strong> ${message}</p>
+            <button onclick="loadInitialCafes()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #8B4513; color: white; border: none; border-radius: 4px; cursor: pointer;">Retry</button>
+        </div>
+    `;
+}
+
 // Set loading state
 function setLoading(loading) {
     isLoading = loading;
@@ -367,6 +205,7 @@ function setLoading(loading) {
     if (loading) {
         searchBtn.innerHTML = '<span class="loading"></span> Searching...';
         searchBtn.disabled = true;
+        cafeResults.innerHTML = '<div style="text-align: center; padding: 2rem;"><span class="loading"></span> Loading cafes...</div>';
     } else {
         searchBtn.innerHTML = 'Find Cafes';
         searchBtn.disabled = false;
